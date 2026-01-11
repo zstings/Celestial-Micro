@@ -9,5 +9,4 @@
   "[html]": {
     "editor.defaultFormatter": "dragon-archer.paradox-highlight"
   },
-  "oxc.enable": false
 }

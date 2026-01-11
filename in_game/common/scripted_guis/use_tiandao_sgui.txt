@@ -2,7 +2,7 @@
     scope = character # 这里建议以角色为作用域，因为你是从角色右键点的
     effect = {
         # 1. 存入当前角色，方便 GUI 读取
-        set_global_variable = { 
+        set_global_variable = {
             name = tiandao_current_target
             value = prev # 在 interaction 中调用时，prev 通常指向被点击的角色
         }

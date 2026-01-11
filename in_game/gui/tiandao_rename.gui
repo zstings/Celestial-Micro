@@ -16,7 +16,7 @@ window = {
     app_input_modal = {
         blockoverride "desc" {
             text_single = {
-                text = "[GetPlayer.GetName] [Character.GetName] 的名字 #E [Character.GetFirstNameKey]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!" 
+                text = "[GetPlayer.GetName] [Character.GetName] 的名字 #E [Character.GetFirstNameKey]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
             }
         }
         blockoverride "title" {
@@ -26,19 +26,9 @@ window = {
             text = "输入自定义名字"
         }
         blockoverride "on_confirm_click" {
-             # 执行改名内容
+            # 执行改名内容
             onclick = "[ExecuteConsoleCommand(
-                Concatenate(
-                    'effect global_var:current_rename_target_var',
-                    Concatenate(
-                        ' = { set_first_name = \"',
-                        Concatenate(
-                            GetVariableSystem.Get('input_content'),
-                            '\" }'
-                        )
-                    )
-                )
-            )]"
+            Concatenate('effect global_var:current_rename_target_var',Concatenate(' = { set_first_name = \"',Concatenate(GetVariableSystem.Get('input_content'),'\" }'))))]"
             # 清空输入内容
             onclick = "[GetVariableSystem.Clear('input_content')]"
             # 改名后关闭窗口

@@ -1,12 +1,12 @@
 ﻿# 定义一个名为 input_number_digit 的“函数”
 # 使用 $DIGIT$ 作为参数占位符
 input_number_digit = {
-	change_global_variable = { 
-		name = pinyin_code 
-		multiply = 10 
-	}
-	change_global_variable = { 
-		name = pinyin_code 
-		add = $DIGIT$
-	}
+    change_global_variable = {
+        name = pinyin_code
+        multiply = 10
+    }
+    change_global_variable = {
+        name = pinyin_code
+        add = $DIGIT$
+    }
 }

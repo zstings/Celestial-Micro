@@ -1,13 +1,13 @@
 ﻿# 脚本参考来源: https://eu5.paradoxwikis.com/Character_modding
-use_rename_interaction = {
+tiandao_rename_interaction = {
     message = no #意味着当效果执行后，系统必须发送一条通知给玩家。
     on_own_nation = yes  # 只能对自己国家的人用
-	force_accept = no
+    force_accept = no
     desc = "111"
     # 什么时候显示这个右键选项
     potential = {
         scope:actor = {
-            is_player = yes  # 只有玩家能看见 
+            is_player = yes  # 只有玩家能看见
         }
     }
     # 谁能被选中改名
@@ -19,13 +19,13 @@ use_rename_interaction = {
         visible = {}
         enabled = {}
     }
-	effect = {
-		scope:actor = {
+    effect = {
+        scope:actor = {
             # 直接把角色存入变量
             set_global_variable = { name = tiandao_current_target value = scope:recipient }
             # 打开输入框
             set_global_variable = { name = show_tiandao_input_modal value = yes }
-		}
+        }
     }
     # AI 永远不会主动去用这个功能 [cite: 44, 48]
     ai_will_do = {
