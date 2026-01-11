@@ -3,7 +3,6 @@ tiandao_rename_interaction = {
     message = no #意味着当效果执行后，系统必须发送一条通知给玩家。
     on_own_nation = yes  # 只能对自己国家的人用
     force_accept = no
-    desc = "111"
     # 什么时候显示这个右键选项
     potential = {
         scope:actor = {
