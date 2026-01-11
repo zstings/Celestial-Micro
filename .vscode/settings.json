@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "explorer.fileNesting.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dragon-archer.paradox-highlight",
+  "[html]": {
+    "editor.defaultFormatter": "dragon-archer.paradox-highlight"
+  },
+  "oxc.enable": false
+}
