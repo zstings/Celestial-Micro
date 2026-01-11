@@ -1,0 +1,5 @@
+﻿# https://eu5.paradoxwikis.com/Localization
+l_simp_chinese:
+ tiandao_rename_interaction: "御笔赐名"
+ tiandao_rename_interaction_desc_specific: "#E 【天道圣旨：命格重写中】#!\n夫星易位，命格重更。吾承天命，微操因果，重塑乾坤。 今[recipient.GetName]得天道垂青，以吾之笔，亲定其名。"
+ tiandao_rename_interaction_concept: "角色更名方案"

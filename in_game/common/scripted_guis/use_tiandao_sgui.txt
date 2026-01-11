@@ -1,0 +1,24 @@
+﻿open_tiandao_input_modal_sgui = {
+    scope = character # 这里建议以角色为作用域，因为你是从角色右键点的
+    effect = {
+        # 1. 存入当前角色，方便 GUI 读取
+        set_global_variable = { 
+            name = tiandao_current_target
+            value = prev # 在 interaction 中调用时，prev 通常指向被点击的角色
+        }
+        # 2. 打开 GUI 显示开关
+        set_global_variable = {
+            name = show_tiandao_input_modal
+            value = yes
+        }
+    }
+}
+# 关闭弹窗
+close_tiandao_input_modal_sgui = {
+    scope = country
+    effect = {
+        # 直接在这里清除全局变量
+        remove_global_variable = show_tiandao_input_modal
+        remove_global_variable = tiandao_current_target
+    }
+}

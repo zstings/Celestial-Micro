@@ -1,0 +1,5 @@
+﻿namespace = tiandao_rename
+
+tiandao_rename.1 = {
+	
+}
