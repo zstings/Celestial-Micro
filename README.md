@@ -1,14 +1,21 @@
-# 开局天道：这次我要微操
-eu5 MOD
+# 开局天道：这次我要微操 （Tiandao System Framework）
 
-c:[国家TAG] eg: c:MNG // 指定国家大明
-effect set_global_variable = { name = test_var value = 100 }
-effect set_global_variable = { name = show_pinyin_window value = yes }
-effect remove_global_variable = show_pinyin_window
+一个EU5的Mod。
 
-刷新本地化文件
-reload localization
+## 支持的功能
 
-控制台，输入 explorer
-在弹出的 Object Explorer 窗口中，在 Providers 选择 data Types 选项。
-找到Character, 能看到角色相关的所有函数，eg: GetName
+- **角色`名字`重命名**：在角色交互菜单中添加 `御笔赐名` 按钮，支持自定义修改角色名字。
+- **角色`昵称`重命名**：在角色交互菜单中添加 `钦定雅号` 按钮，支持自定义修改角色昵称。
+- **角色`属性`修改**：在角色交互菜单中添加 `重塑命格` 按钮，支持自定义修改角色属性。
+
+## 安装与使用
+
+1. 将 本项目全部下载下来把文件放入游戏的`mod`文件夹中。
+2. 游戏启动后在mod管理里勾选“开局天道：这次我要微操”。
+3. 进入游戏后，右键点击任意角色，即可在菜单中看到天道系列功能。
+
+## 注意事项
+
+- **成就兼容性**：使用本 Mod 会修改游戏校验码（Checksum），导致无法获得官方成就。
+- **联机说明**：由于采用了底层指令注入技术，本 Mod 仅建议在单机模式下使用。
+- **实时生效**：所有修改在点击确认后立即生效，无需重启游戏或等待下月刷新。
