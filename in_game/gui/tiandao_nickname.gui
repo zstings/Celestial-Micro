@@ -26,16 +26,23 @@ window = {
             text = "输入自定义雅号"
         }
         blockoverride "on_cancel_click" {
-            onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            using = close_modal
+            using = clear_input_content
         }
         blockoverride "on_confirm_click" {
             # 执行改名内容
-            onclick = "[ExecuteConsoleCommand(
-            Concatenate('effect global_var:tiandao_current_target',Concatenate(' = { set_nickname = \"',Concatenate(GetVariableSystem.Get('input_content'),'\" }'))))]"
-            # 清空输入内容
-            onclick = "[GetVariableSystem.Clear('input_content')]"
-            # 改名后关闭窗口
-            onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            onclick = "[ExecuteConsoleCommand(Concatenate('effect global_var:tiandao_current_target',Concatenate(' = { set_nickname = \"',Concatenate(GetVariableSystem.Get('input_content'),'\" }'))))]"
+            using = close_modal
+            # 手动清空输入内容 不使用 using 因为 using执行时机会早于ExecuteConsoleCommand。
+            onclick = "[GetVariableSystem.Set('input_content','')]"
         }
     }
+}
+# 改名后关闭窗口
+template close_modal {
+    onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+}
+# 清空输入内容
+template clear_input_content {
+    onclick = "[GetVariableSystem.Clear('input_content')]"
 }
