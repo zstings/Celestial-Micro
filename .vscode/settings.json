@@ -6,7 +6,4 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dragon-archer.paradox-highlight",
-  "[html]": {
-    "editor.defaultFormatter": "dragon-archer.paradox-highlight"
-  },
 }
