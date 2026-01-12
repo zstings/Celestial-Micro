@@ -4,8 +4,8 @@
 # ============================================================
 window = {
     # GUI 窗口的唯一名字
-    name = "tiandao_rename"
-    visible = "[GetGlobalVariable('show_tiandao_rename_modal').IsSet]"
+    name = "tiandao_nickname"
+    visible = "[GetGlobalVariable('show_tiandao_nickname_modal').IsSet]"
     datacontext = "[GetGlobalVariable('tiandao_current_target').GetCharacter]"
     # 窗口以屏幕中心为锚点
     parentanchor = center
@@ -16,26 +16,26 @@ window = {
     app_input_modal = {
         blockoverride "desc" {
             text_single = {
-                text = "[GetPlayer.GetName] [Character.GetName] 的名字 #E [Character.GetFirstNameKey]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
+                text = "[GetPlayer.GetName] [Character.GetName] 的雅号 #E [Character.GetNickname]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
             }
         }
         blockoverride "title" {
-            text = "御笔赐名"
+            text = "钦定雅号"
         }
         blockoverride "sub_title" {
-            text = "输入自定义名字"
+            text = "输入自定义雅号"
         }
         blockoverride "on_cancel_click" {
-            onclick = "[GetScriptedGui('close_tiandao_rename_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
         blockoverride "on_confirm_click" {
             # 执行改名内容
             onclick = "[ExecuteConsoleCommand(
-            Concatenate('effect global_var:tiandao_current_target',Concatenate(' = { set_first_name = \"',Concatenate(GetVariableSystem.Get('input_content'),'\" }'))))]"
+            Concatenate('effect global_var:tiandao_current_target',Concatenate(' = { set_nickname = \"',Concatenate(GetVariableSystem.Get('input_content'),'\" }'))))]"
             # 清空输入内容
             onclick = "[GetVariableSystem.Clear('input_content')]"
             # 改名后关闭窗口
-            onclick = "[GetScriptedGui('close_tiandao_rename_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
     }
 }

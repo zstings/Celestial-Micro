@@ -1,5 +1,5 @@
 ﻿# 脚本参考来源: https://eu5.paradoxwikis.com/Character_modding
-tiandao_rename_interaction = {
+tiandao_nickname_interaction = {
     message = no #意味着当效果执行后，系统必须发送一条通知给玩家。
     on_own_nation = yes  # 只能对自己国家的人用
     force_accept = no
@@ -23,7 +23,7 @@ tiandao_rename_interaction = {
             # 直接把角色存入变量
             set_global_variable = { name = tiandao_current_target value = scope:recipient }
             # 打开输入框
-            set_global_variable = { name = show_tiandao_rename_modal value = yes }
+            set_global_variable = { name = show_tiandao_nickname_modal value = yes }
         }
     }
     # AI 永远不会主动去用这个功能 [cite: 44, 48]

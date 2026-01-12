@@ -93,9 +93,7 @@ types AppTianDaoGlobalTypes {
                                 using = button_resize_to_fit_text
                                 using = snd_UI_close
                                 # 点击后关闭窗口
-                                block "on_cancel_click" {
-                                    onclick = "[GetScriptedGui('close_tiandao_input_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                                }
+                                block "on_cancel_click" {}
                             }
                             # -------------------------
                             # 确认 / 改名按钮
