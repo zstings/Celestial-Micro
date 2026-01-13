@@ -15,8 +15,12 @@ window = {
     size = { 600 300 }
     state = {
         name = _show
-        on_finish = "[GetVariableSystem.Set('input_content', Character.GetNicknameWithNoTooltip)]"
+        on_start = "[GetVariableSystem.Set('input_content', Character.GetNicknameWithNoTooltip)]"
     }
+    # state = {
+    #     name = _hide
+    #     on_finish = "[GetVariableSystem.Clear('input_content')]"
+    # }
     app_input_modal = {
         blockoverride "desc" {
             text_single = {

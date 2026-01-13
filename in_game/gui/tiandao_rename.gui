@@ -15,12 +15,12 @@ window = {
     size = { 600 300 }
     state = {
         name = _show
-        on_finish = "[GetVariableSystem.Set('input_content', Character.GetFirstNameKey)]"
+        on_finish = "[GetVariableSystem.Set('input_content', Character.GetFirstNameWithNoTooltip)]"
     }
     app_input_modal = {
         blockoverride "desc" {
             text_single = {
-                text = "[GetPlayer.GetName] [Character.GetName] 的名字 #E [Character.GetFirstNameKey]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
+                text = "[GetPlayer.GetName] [Character.GetName] 的名字 #E [Character.GetFirstNameWithNoTooltip]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
             }
         }
         blockoverride "title" {
