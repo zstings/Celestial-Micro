@@ -13,10 +13,14 @@ window = {
     allow_outside = yes
     # 初始窗口大小（最终会被内部布局影响）
     size = { 600 300 }
+    state = {
+        name = _show
+        on_finish = "[GetVariableSystem.Set('input_content', Character.GetNicknameWithNoTooltip)]"
+    }
     app_input_modal = {
         blockoverride "desc" {
             text_single = {
-                text = "[GetPlayer.GetName] [Character.GetName] 的雅号 #E [Character.GetNickname]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
+                text = "[GetPlayer.GetName] [Character.GetName] 的雅号 #E [Character.GetNicknameWithNoTooltip]#! 将变更为 #E [GetVariableSystem.Get('input_content')]#!"
             }
         }
         blockoverride "title" {
@@ -25,6 +29,8 @@ window = {
         blockoverride "sub_title" {
             text = "输入自定义雅号"
         }
+        # 重置确认按钮的点击状态
+        blockoverride "enable_confirm_button" {}
         blockoverride "on_cancel_click" {
             # 关闭弹窗
             onclick = "[GetScriptedGui('close_tiandao_nickname_modal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"

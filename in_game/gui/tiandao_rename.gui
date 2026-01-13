@@ -13,6 +13,10 @@ window = {
     allow_outside = yes
     # 初始窗口大小（最终会被内部布局影响）
     size = { 600 300 }
+    state = {
+        name = _show
+        on_finish = "[GetVariableSystem.Set('input_content', Character.GetFirstNameKey)]"
+    }
     app_input_modal = {
         blockoverride "desc" {
             text_single = {

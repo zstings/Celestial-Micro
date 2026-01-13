@@ -105,7 +105,7 @@ types AppTianDaoGlobalTypes {
                                 using = button_resize_to_fit_text
                                 using = snd_UI_popup_confirm
                                 # 只有当输入内容不为空时才允许点击
-                                enabled = "[Not(EqualTo_string(GetVariableSystem.Get('input_content'), ''))]"
+                                block "enable_confirm_button" {enabled = "[Not(EqualTo_string(GetVariableSystem.Get('input_content'), ''))]"}
                                 block "on_confirm_click" {}
                                 # 键盘回车可触发
                                 input_action = "confirm"
