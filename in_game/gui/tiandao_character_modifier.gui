@@ -44,7 +44,6 @@ window = {
             }
         }
         blockoverride "title" {
-            visible = "[EqualTo_int32( GetGlobalVariable('tiandao_tips_windows_key').GetValue, int32(1))]"
             text = "tiandao_character_modifier_interaction"
         }
         blockoverride "sub_title" {}
@@ -135,39 +134,7 @@ window = {
         }
         blockoverride "on_confirm_click" {
             # 执行修改角色信息
-            onclick = "[ExecuteConsoleCommand(
-            Concatenate(
-            'effect global_var:tiandao_current_target = { set_first_name = \"',
-            Concatenate(
-            GetVariableSystem.Get('input_first_name'),
-            Concatenate(
-            '\" set_nickname = \"',
-            Concatenate(
-            GetVariableSystem.Get('input_nickname'),
-            Concatenate(
-            '\" add_adm = \"-100\" add_adm = \"',
-            Concatenate(
-            GetVariableSystem.Get('input_adm'),
-            Concatenate(
-            '\" add_dip = \"-100\" add_dip = \"',
-            Concatenate(
-            GetVariableSystem.Get('input_dip'),
-            Concatenate(
-            '\" add_mil = \"-100\" add_mil = \"',
-            Concatenate(
-            GetVariableSystem.Get('input_mil'),
-            '\"};'
-            )
-            )
-            )
-            )
-            )
-            )
-            )
-            )
-            )
-            )
-            )]"
+            onclick = "[ExecuteConsoleCommand(Localize('tiandao_character_modifier_effect'))]"
             # 关闭弹窗
             onclick = "[GetScriptedGui('close_tiandao_character_modifier_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
         }
