@@ -31,3 +31,12 @@ close_tiandao_nickname_modal_sgui = {
         remove_global_variable = tiandao_current_target
     }
 }
+# 关闭弹窗
+close_tiandao_character_modifier_sgui = {
+    scope = country
+    effect = {
+        # 直接在这里清除全局变量
+        remove_global_variable = show_tiandao_character_modifier
+        remove_global_variable = tiandao_current_target
+    }
+}

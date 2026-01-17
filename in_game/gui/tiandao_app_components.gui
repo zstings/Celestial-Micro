@@ -48,34 +48,7 @@ types AppTianDaoGlobalTypes {
                     # =========================
                     # 输入框区域
                     # =========================
-                    vbox = {
-                        layoutpolicy_horizontal = expanding
-                        margin = {30 0}
-                        block "message_template_content" {
-                            hbox = {
-                                layoutpolicy_horizontal = expanding
-                                margin = {5 0}
-                                visible = yes
-                                # -------------------------
-                                # 单行文本输入框
-                                # -------------------------
-                                editbox_single = {
-                                    name = "input_target"
-                                    # 输入框尺寸
-                                    size = { 300 30 }
-                                    # 输入框 placeholder
-                                    blockoverride "editbox_label" { text = "请输入..." }
-                                    # 鼠标提示
-                                    tooltipwidget = { LeftClickButtonTooltip = { blockoverride "onclick_text" { text = "请输入" } } }
-                                    # 最大字符数
-                                    maxcharacters = 12
-                                    # 把内容保存到 GUI 变量系统中
-                                    raw_text = "[GetVariableSystem.Get('input_content')]"
-                                    ontextedited = "[GetVariableSystem.Set('input_content', GetTextFromSelfOrAnyChildEditbox(PdxGuiWidget.Self))]"
-                                }
-                            }
-                        }
-                    }
+                    block "input" {}
                     # =========================
                     # 按钮区域
                     # =========================
@@ -105,7 +78,9 @@ types AppTianDaoGlobalTypes {
                                 using = button_resize_to_fit_text
                                 using = snd_UI_popup_confirm
                                 # 只有当输入内容不为空时才允许点击
-                                block "enable_confirm_button" {enabled = "[Not(EqualTo_string(GetVariableSystem.Get('input_content'), ''))]"}
+                                block "enable_confirm_button" {
+                                    # enabled = "[Not(EqualTo_string(GetVariableSystem.Get('input_content'), ''))]"
+                                }
                                 block "on_confirm_click" {}
                                 # 键盘回车可触发
                                 input_action = "confirm"
@@ -192,6 +167,31 @@ types AppTianDaoGlobalTypes {
                         }
                     }
                 }
+            }
+        }
+    }
+    type app_tiandao_input = vbox {
+        layoutpolicy_horizontal = expanding
+        margin = {30 0}
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = {5 0}
+            block "input_label" {}
+            # -------------------------
+            # 单行文本输入框
+            # -------------------------
+            editbox_single = {
+                name = "input_target"
+                # 输入框尺寸
+                size = { 300 30 }
+                # 输入框 placeholder
+                blockoverride "editbox_label" { text = "请输入..." }
+                # 鼠标提示
+                tooltipwidget = { LeftClickButtonTooltip = { blockoverride "onclick_text" { text = "请输入" } } }
+                # 最大字符数
+                maxcharacters = 12
+                # 把内容保存到 GUI 变量系统中
+                block "input_content" {}
             }
         }
     }
