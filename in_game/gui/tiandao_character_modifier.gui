@@ -17,6 +17,9 @@ window = {
         name = _show
         on_finish = "[GetVariableSystem.Set('input_first_name', Character.GetFirstNameWithNoTooltip)]"
         on_finish = "[GetVariableSystem.Set('input_nickname', Character.GetNicknameWithNoTooltip)]"
+        on_finish = "[GetVariableSystem.Set('input_adm', ToString_int32( Character.GetAbility('adm')))]"
+        on_finish = "[GetVariableSystem.Set('input_dip', ToString_int32( Character.GetAbility('dip')))]"
+        on_finish = "[GetVariableSystem.Set('input_mil', ToString_int32( Character.GetAbility('mil')))]"
     }
     state = {
         name = _hide
@@ -37,7 +40,7 @@ window = {
             }
             text_single = {
                 margin_top = 10
-                text = "行政: #E [Character.GetFirstNameWithNoTooltip]#!    外交: #E [Character.GetFirstNameWithNoTooltip]#!    军事: #E [Character.GetFirstNameWithNoTooltip]#! "
+                text = "行政: #E [Character.GetAbility('adm')]#! 将变更为 #E [GetVariableSystem.Get('input_adm')]#!   外交: #E [Character.GetAbility('dip')]#! 将变更为 #E [GetVariableSystem.Get('input_dip')]#!    军事: #E [Character.GetAbility('mil')]#! 将变更为 #E [GetVariableSystem.Get('input_mil')]#! "
             }
         }
         blockoverride "title" {
