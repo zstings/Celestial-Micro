@@ -1,11 +1,5 @@
 ﻿# https://eu5.paradoxwikis.com/Localization
 l_simp_chinese:
-  tiandao_rename_interaction: "御笔赐名"
-  tiandao_rename_interaction_desc_specific: "#E 【天道圣旨：命格重写中】#!\n夫星易位，命格重更。吾承天命，微操因果，重塑乾坤。 今[recipient.GetName]得天道垂青，以吾之笔，亲定其名。"
-  tiandao_rename_interaction_concept: "角色更名方案"
-  tiandao_nickname_interaction: "钦定雅号"
-  tiandao_nickname_interaction_desc_specific: "#E 【天道敕封：雅号亲定中】#!\n往昔虚名，尽随风散；今朝雅号，天道所赐。 吾执因果之笔，于命盘之上，亲点其名。 今[recipient.GetName]受天感应，以此雅号，彰显其世间造化。"
-  tiandao_nickname_interaction_concept: "角色雅号方案"
   tiandao_character_modifier_interaction: "天道·角色修改器"
   tiandao_character_modifier_interaction_desc_specific: "#E 【$tiandao_character_modifier_interaction$】#!\n用于角色名字、昵称、军事、行政、外交的修改"
   tiandao_character_modifier_interaction_concept: "$tiandao_character_modifier_interaction$"

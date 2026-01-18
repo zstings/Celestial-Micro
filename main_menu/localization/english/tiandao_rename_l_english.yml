@@ -1,5 +1,7 @@
 ﻿# https://eu5.paradoxwikis.com/Localization
-l_simp_chinese:
- tiandao_rename_interaction: "御笔赐名"
- tiandao_rename_interaction_desc_specific: "#E 【天道圣旨：命格重写中】#!\n夫星易位，命格重更。吾承天命，微操因果，重塑乾坤。 今[recipient.GetName]得天道垂青，以吾之笔，亲定其名。"
- tiandao_rename_interaction_concept: "角色更名方案"
+l_english:
+  tiandao_character_modifier_interaction: "天道·角色修改器"
+  tiandao_character_modifier_interaction_desc_specific: "#E 【$tiandao_character_modifier_interaction$】#!\n用于角色名字、昵称、军事、行政、外交的修改"
+  tiandao_character_modifier_interaction_concept: "$tiandao_character_modifier_interaction$"
+  tiandao_character_modifier_effect: "effect global_var:tiandao_current_target = { set_first_name = \"[GetVariableSystem.Get(\'input_first_name\')]\" set_nickname = \"[GetVariableSystem.Get(\'input_nickname\')]\" add_adm = -100 add_adm = [GetVariableSystem.Get(\'input_adm\')] add_dip = -100 add_dip = [GetVariableSystem.Get(\'input_dip\')] add_mil = -100 add_mil = [GetVariableSystem.Get(\'input_mil\')] }"
+
