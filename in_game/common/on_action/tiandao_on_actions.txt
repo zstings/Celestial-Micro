@@ -1,0 +1,10 @@
+﻿on_game_start = {
+    effect = {
+        set_global_variable = { name = tiandao_modifier_button_visible value = yes }
+    }
+}
+on_game_start_after_load = {
+    effect = {
+        set_global_variable = { name = tiandao_modifier_button_visible value = yes }
+    }
+}

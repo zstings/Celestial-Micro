@@ -1,0 +1,33 @@
+# ============================================================
+# 天道修改器入口 GUI
+# ============================================================
+window = {
+    # GUI 窗口的唯一名字
+    name = "tiandao_modifier_button"
+    visible = "[Not(GetGlobalVariable('tiandao_modifier_button_visible').IsSet)]"
+    # 窗口以屏幕中心为锚点
+    parentanchor = top|right
+    widgetanchor = top|right
+    # widgetanchor = top|right
+    position = { -52.5 52.5 }
+    # 允许窗口超出屏幕边界（和官方弹窗一致）
+    allow_outside = yes
+    # 初始窗口大小（最终会被内部布局影响）
+    size = { 30 30 }
+    # 核心：显式禁用移动
+    movable = no
+    # 防止点击穿透到地图（可选，增加 UI 稳定性）
+    filter_mouse = all
+    estate_reform_action_button_alt = {
+        size = { 30 30 }
+        tooltip = "天道修改器：点击打开角色生成器"
+        button = {
+            size = { 100% 100% }
+            # 点击逻辑
+            onclick = "[ExecuteConsoleCommand('gui.CreateWidget gui/tiandao_modifier_main.gui tiandao_modifier_main')]"
+            # 鼠标悬停和点击时的音效（可选）
+            using = click_sound
+            using = over_sound
+        }
+    }
+}

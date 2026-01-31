@@ -10,3 +10,27 @@ input_number_digit = {
         add = $DIGIT$
     }
 }
+
+# 定义一个生成角色的 effect，方便 GUI 调用
+generate_xuda_effect = {
+    create_named_dynasty = 还是2
+    create_character = {
+        adm = 92
+        dip = 93
+        mil = 91
+        dynasty = dynasty:还是2
+        first_name = "达16"
+        age = 20
+        female = yes
+        # female = yes         # 性别
+        culture = root.culture  # 继承国家的文化
+        religion = root.religion # 继承国家的宗教
+        # 如果你想让他具备特定的武将特质（参考 modifiers.log）
+        # traits = { great_general }
+        # 让他成为你的将领或官员 （无效）
+        # save_scope_as = xu_da_scope
+    }
+
+    # 3. 让角色进入国家人才库 (取决于 EU5 的人才系统，通常是加入 court 或成为官员)
+    # 如果你想让他直接变成将领，需要额外的 effect
+}
